@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace griush {
-    namespace Shaders {
+namespace griush 
+{
+    namespace Shaders 
+    {
         [ExecuteInEditMode, ImageEffectAllowedInSceneView]
         [RequireComponent(typeof(Camera))]
-        [AddComponentMenu("griush Effects/Toon")]
+        [AddComponentMenu("griush Shaders/Toon")]
         public class Toon : MonoBehaviour
         {
             Shader _shader;
