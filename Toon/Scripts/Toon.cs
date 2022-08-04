@@ -13,9 +13,9 @@ namespace griush {
             Material _material;
 
             [SerializeField]
-            float _offset;
+            float _offset = 0.002f;
             [SerializeField]
-            float _threshold;
+            float _threshold = 0.1f;
 
             void OnEnable()
             {
