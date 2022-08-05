@@ -1,4 +1,4 @@
-Shader "Hidden/griush/ToonShader"
+Shader "Hidden/griush/OutlineShader"
 {
     Properties
     {

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
@@ -7,8 +5,8 @@ namespace griush
 {
     namespace Shaders
     {
-        [CustomEditor(typeof(Toon))]
-        public class ToonEditor : Editor
+        [CustomEditor(typeof(Outline))]
+        public class OutlineEditor : Editor
         {
             SerializedProperty _offset;
             SerializedProperty _threshold;
@@ -21,7 +19,7 @@ namespace griush
 
             public override void OnInspectorGUI()
             {
-                Toon toon = (Toon)target;
+                Outline toon = (Outline)target;
 
                 GUIStyle style = new GUIStyle();
                 style.fontStyle = FontStyle.Bold;

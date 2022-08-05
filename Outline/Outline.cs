@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace griush 
@@ -8,8 +6,8 @@ namespace griush
     {
         [ExecuteInEditMode, ImageEffectAllowedInSceneView]
         [RequireComponent(typeof(Camera))]
-        [AddComponentMenu("griush Shaders/Toon")]
-        public class Toon : MonoBehaviour
+        [AddComponentMenu("griush Shaders/Outline")]
+        public class Outline : MonoBehaviour
         {
             Shader _shader;
             Material _material;
@@ -21,7 +19,7 @@ namespace griush
 
             void OnEnable()
             {
-                var shader = _shader ? _shader : Shader.Find("Hidden/griush/ToonShader");
+                var shader = _shader ? _shader : Shader.Find("Hidden/griush/OutlineShader");
                 _material = new Material(shader);
                 _material.hideFlags = HideFlags.DontSave;
             }
