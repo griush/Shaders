@@ -5,6 +5,7 @@ Shader "Hidden/griush/OutlineShader"
         _MainTex ("Texture", 2D) = "white" {}
         _Offset ("Offset", Float) = 0.002
         _Threshold("Threshold", Float) = 0.01
+        _Color("Color", Color) = (0, 0, 0, 1)
     }
     SubShader
     {
@@ -42,6 +43,7 @@ Shader "Hidden/griush/OutlineShader"
             sampler2D _MainTex;
             float _Offset;
             float _Threshold;
+            fixed4 _Color;
 
             fixed4 frag (v2f i) : SV_Target
             {
@@ -49,7 +51,7 @@ Shader "Hidden/griush/OutlineShader"
                 fixed4 offsetCol = tex2D(_MainTex, i.uv - _Offset);
                 if (length(col - offsetCol) > _Threshold)
                 {
-                    col = 0;
+                    col = _Color;
                 }
                 return col;
             }

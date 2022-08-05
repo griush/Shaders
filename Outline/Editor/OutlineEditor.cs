@@ -10,11 +10,13 @@ namespace griush
         {
             SerializedProperty _offset;
             SerializedProperty _threshold;
+            SerializedProperty _color;
 
             void OnEnable()
             {
                 _offset = serializedObject.FindProperty("_offset");
                 _threshold = serializedObject.FindProperty("_threshold");
+                _color = serializedObject.FindProperty("_color");
             }
 
             public override void OnInspectorGUI()
@@ -28,6 +30,7 @@ namespace griush
                 EditorGUILayout.LabelField("Shader properties", style);
                 EditorGUILayout.Slider(_offset, -0.003f, 0.003f);
                 EditorGUILayout.Slider(_threshold, 0.05f, 1.5f);
+                EditorGUILayout.PropertyField(_color);
                 serializedObject.ApplyModifiedProperties();
             }
         }

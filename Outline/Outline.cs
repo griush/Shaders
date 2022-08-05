@@ -16,6 +16,8 @@ namespace griush
             float _offset = 0.002f;
             [SerializeField]
             float _threshold = 0.1f;
+            [SerializeField]
+            Color _color = Color.black;
 
             void OnEnable()
             {
@@ -28,6 +30,7 @@ namespace griush
             {
                 _material.SetFloat("_Offset", _offset);
                 _material.SetFloat("_Threshold", _threshold);
+                _material.SetColor("_Color", _color);
 
                 Graphics.Blit(src, dest, _material);
             }
